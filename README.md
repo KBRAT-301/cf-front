@@ -3,7 +3,7 @@
 ## Meet team KBRAT
 
 **Kyle Cohen**  
-**Brandon Rimes**
+**Brandon Rimes**  
 **Ryan Emmans**  
 **Alex Grazda**  
 **Tray Chea**  
