@@ -5,7 +5,27 @@ class About extends React.Component {
   render() {
     return (
       <div className="About">
-        <p>About</p>
+        <h1>About the Team</h1>
+        <div>
+          <img src="https://via.placeholder.com/150" alt="Kyle Cohen" /> 
+          <p>about kyle</p>
+        </div>
+        <div>
+          <p>About Brandon</p>
+          <img src="https://via.placeholder.com/150" alt="Brandon Grimes" />
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/150" alt="Ryan Emmans" />
+          <p>About Ryan</p>
+        </div>
+        <div>
+          <p>About Alex</p>
+          <img src="https://via.placeholder.com/150" alt="Alex Grazda" />
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/150" alt="Tray Chea" />
+          <p>About Tray</p>
+        </div>
       </div>
     );
   }
