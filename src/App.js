@@ -1,20 +1,31 @@
-import "./App.css";
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Calculator from "./components/Calculator";
-import Resources from "./components/Resources";
-import About from "./components/About";
-import Footer from "./components/Footer";
-
-
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+import { withAuth0 } from '@auth0/auth0-react';
+import Header from './components/Header';
+import Home from './components/Home';
+import Calculator from './components/Calculator';
+import Resources from './components/Resources';
+import About from './components/About';
+import Footer from './components/Footer';
 
 class App extends React.Component {
+  makeRequest = async () => {
+    const { getIdTokenClaims } = this.props.auth0;
+    let tokenClaims = await getIdTokenClaims();
+    const jwt = tokenClaims.__raw;
 
-  // const serverResponse = await axios.get("http://localhost:3001/test", config);
+    const config = {
+      headers: { 'Authorization': `Bearer ${jwt}` }
+    };
+    const serverResponse = await axios.get('http://localhost:3001/test', config);
+
+    console.log(serverResponse);
+  }
 
   render() {
+    const { user, isAuthenticated, isLoading } = this.props.auth0;
+    console.log('app', user, isLoading);
     return (
       <div className="App">
         <Router>
@@ -39,4 +50,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default withAuth0(App);
