@@ -5,7 +5,7 @@ class Resources extends React.Component {
   render() {
     return (
       <div className="Resources">
-        <p>Resources</p>
+        <h2>Resources</h2>
       </div>
     );
   }
