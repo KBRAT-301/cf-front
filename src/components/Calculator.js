@@ -5,7 +5,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="Calculator">
-        <p>Calculator</p>
+        <h2>Carbon Footprint Calculator</h2>
       </div>
     );
   }
