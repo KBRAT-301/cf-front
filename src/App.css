@@ -66,3 +66,15 @@ footer {
 footer p {
   margin: 0px;
 }
+
+/*-------------------------------------------------------*/
+
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  
+};
+
+.about:nth-child(odd) .profile {
+  justify-content: flex-end;
+}
