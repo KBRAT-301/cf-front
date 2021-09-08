@@ -23,8 +23,7 @@
 }
 
 .key.pressed,
-.key.flat.pressed,
-.key:hover {
+.key.flat.pressed {
   background-color: deeppink;
   border: 1px solid white;
 }
