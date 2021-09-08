@@ -6,10 +6,7 @@ import Keyboard from './Keyboard';
 class Home extends React.Component {
   render() {
     return (
-      <div className="Home">
-        <h2>Enter Subtitle Here</h2>
-        <img src="https://via.placeholder.com/600x400" alt="img" />
-        <p>Keyboard will go here!</p>
+      <div className="home">
         <Keyboard />
       </div>
     );

@@ -1,9 +1,28 @@
-header {
-  /* position: fixed; */
-  background-color: #414141;
+.app {
+  overflow: hidden;
+  background-image: url('./img/moog.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-h1 {
+header {
+  position: fixed;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  top: 0px;
+  opacity: 80%;
+}
+
+h1, h2, p {
   color: white;
 }
 
@@ -15,7 +34,7 @@ h1 {
 }
 
 .link {
-  color: #f4804f;
+  color: deeppink;
   text-decoration: none;
 }
 
@@ -29,4 +48,21 @@ h1, h2, .navItem, p {
 
 p {
   width: 600px;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  height: 60px;
+  opacity: 80%;
+}
+
+footer p {
+  margin: 0px;
 }
