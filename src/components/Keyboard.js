@@ -66,7 +66,7 @@ export default class Keyboard extends React.Component {
         <audio
           id={note}
           key={index}
-          src={`../../celloAudio/${note}.wav`}
+          src={`../../celloAudio/${note}.mp3`}
         />
       );
     });
