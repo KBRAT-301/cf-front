@@ -17,7 +17,7 @@
 }
 
 .key.pressed, .key.flat.pressed {
-  background-color: hotpink;
+  background-color: deeppink;
 }
 
 .key-text {
