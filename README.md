@@ -18,15 +18,15 @@
 
 ## Wireframe  
 
-![Wireframe](.img/Piano-Wireframe.png)
+![Wireframe](./src/img/Piano-Wireframe.png)
 
 ## DOM  
 
-![DOM](.img/Piano-DOM.png)
+![DOM](./src/img/Piano-DOM.png)
 
 ## Schema  
 
-![Schema](.img/Piano-Schema.png)  
+![Schema](./src/img/Piano-Schema.png)  
 
 ## User Stories  
 
