@@ -19,7 +19,8 @@ header {
   height: 100px;
   width: 100%;
   top: 0px;
-  opacity: 80%;
+  opacity: 75%;
+  border-bottom: 1px solid gray;
 }
 
 h1, h2, p {
@@ -60,7 +61,8 @@ footer {
   width: 100%;
   background-color: black;
   height: 60px;
-  opacity: 80%;
+  opacity: 75%;
+  border-top: 1px solid gray;
 }
 
 footer p {

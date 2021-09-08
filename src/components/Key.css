@@ -3,12 +3,13 @@
   height: 300px;
   width: 60px;
   border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 5px 5px 20px 20px;
 }
 
 .key.flat {
   position: relative;
-  background-color: black;
+  background-color: rgb(57, 57, 57);
+  border: 1px solid white;
   margin-left: -15px;
   margin-right: -15px;
   height: 200px;
@@ -18,6 +19,7 @@
 
 .key.pressed, .key.flat.pressed {
   background-color: deeppink;
+  border: 1px solid white;
 }
 
 .key-text {
@@ -27,6 +29,6 @@
   font-size: 1.2rem;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
-  margin-top: 250px;
+  margin-top: 255px;
   pointer-events: none;
 }
