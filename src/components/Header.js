@@ -1,7 +1,9 @@
 import React from 'react';
-import { Navbar, NavItem, Button } from 'react-bootstrap';
+import { Navbar, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { withAuth0 } from '@auth0/auth0-react';
+import LoginButton from './LoginButton.js';
+import LogoutButton from './LogoutButton.js';
 
 class Header extends React.Component {
   render() {
@@ -27,9 +29,7 @@ class Header extends React.Component {
             </Link>
           </NavItem>
           <NavItem className="navItem">
-            <Button size="lg" style={{ backgroundColor: 'deeppink', border: 'none' }}>
-              LOG IN
-            </Button>
+            {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
           </NavItem>
         </Navbar>
       </header>
