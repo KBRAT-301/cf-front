@@ -4,10 +4,10 @@ import { withAuth0 } from '@auth0/auth0-react';
 class About extends React.Component {
   render() {
     return (
-      <div className="About">
-        <h1>About the Team</h1>
+      <div>
+        <h2>About</h2>
         <div>
-          <img src="https://via.placeholder.com/150" alt="Kyle Cohen" /> 
+          <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
           <p>about kyle</p>
         </div>
         <div>
