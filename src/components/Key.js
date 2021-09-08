@@ -5,7 +5,7 @@ import { NOTE_TO_KEY } from '../keyMap';
 
 export default class Key extends React.Component {
   noteIsFlat = (note) => {
-    return note.includes('fl');
+    return note.includes('b');
   }
 
   keyIsPressed = (note, pressedKeys) => {
