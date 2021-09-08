@@ -8,7 +8,6 @@ import {
   KEY_TO_NOTE,
   NOTE_TO_KEY,
 } from '../keyMap';
-// import './celloAudio';
 
 export default class Keyboard extends React.Component {
   constructor(props) {
@@ -41,7 +40,9 @@ export default class Keyboard extends React.Component {
 
   handleKeyClick = async (e) => {
     let key = e.target.innerText.toLowerCase();
-    this.playNote(KEY_TO_NOTE[key]);
+    if(VALID_KEYS.includes(key)) {
+      this.playNote(KEY_TO_NOTE[key]);
+    }
   }
 
   playNote = (note) => {
