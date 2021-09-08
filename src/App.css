@@ -47,10 +47,10 @@ h1, h2, .navItem, p {
   font-family: 'Ubuntu', sans-serif;
 }
 
-p {
+/* p {
   width: 600px;
   text-align: center;
-}
+} */
 
 footer {
   position: absolute;
@@ -67,4 +67,46 @@ footer {
 
 footer p {
   margin: 0px;
+}
+
+/*-------------------------------------------------------*/
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  padding: 20px;
+  /* margin: 10px; */
+  border: 4px solid deeppink;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.568);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profileImg {
+  width: 100%;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.profileImg img {
+  border-radius: 50%;
+}
+
+.profile p {
+  color: black;
+  line-height: 1em;
+}
+
+/* .about:nth-child(even) .profile {
+  justify-content: flex-end;
+} */
+
+.about {
+  height: 79vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 80px
 }
