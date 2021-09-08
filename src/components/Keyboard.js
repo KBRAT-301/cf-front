@@ -14,6 +14,7 @@ export default class Keyboard extends React.Component {
     super(props);
     this.state = {
       pressedKeys: [],
+      mouseIsDown: false,
     };
   }
   handleKeyDown = (e) => {
@@ -38,21 +39,41 @@ export default class Keyboard extends React.Component {
     this.setState({ pressedKeys: newPressedKeys });
   };
 
-  handleKeyClick = async (e) => {
+  handleKeyClick = (e) => {
     let key = e.target.innerText.toLowerCase();
     if(VALID_KEYS.includes(key)) {
       this.playNote(KEY_TO_NOTE[key]);
     }
-  }
+  };
 
   playNote = (note) => {
     const noteAudio = new Audio(document.getElementById(note).src);
     noteAudio.play();
-  }
+  };
+
+  handleMouseDown = (e) => {
+    this.setState({ mouseIsDown: true });
+  };
+
+  handleMouseOver = (e) => {
+    if(this.state.mouseIsDown) {
+      let key = e.target.innerText.toLowerCase();
+      if(VALID_KEYS.includes(key)) {
+        this.playNote(KEY_TO_NOTE[key]);
+      };
+    }
+  };
+
+  handleMouseUp = (e) => {
+    this.setState({ mouseIsDown: false });
+  };
 
   componentDidMount = () => {
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
+    window.addEventListener('mousedown', this.handleMouseDown);
+    window.addEventListener('mouseup', this.handleMouseUp);
+    window.addEventListener('mouseover', this.handleMouseOver);
   };
 
   render() {
