@@ -1,8 +1,9 @@
-import React from "react";
-import { withAuth0 } from "@auth0/auth0-react";
-import { Button } from "semantic-ui-react";
+import React from 'react';
+import { withAuth0 } from '@auth0/auth0-react';
+import { Button } from 'semantic-ui-react';
 
 class About extends React.Component {
+
   render() {
     return (
       <>
@@ -19,7 +20,9 @@ class About extends React.Component {
               nisi ut aliquip ex ea commodo consequat. "
             </p>
             <div>
-              <Button circular color='linkedin' icon='linkedin'/>
+              <Button circular color='linkedin' icon='linkedin'>
+                  
+              </Button>
             </div>
           </div>
 
