@@ -4,6 +4,7 @@
   width: 60px;
   border: 1px solid black;
   border-radius: 5px 5px 20px 20px;
+  user-select: none;
 }
 
 .key.flat {
@@ -15,9 +16,15 @@
   height: 200px;
   width: 30px;
   z-index: 2;
+  color: ivory;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 168px;
 }
 
-.key.pressed, .key.flat.pressed {
+.key.pressed,
+.key.flat.pressed,
+.key:hover {
   background-color: deeppink;
   border: 1px solid white;
 }

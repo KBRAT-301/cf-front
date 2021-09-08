@@ -24,12 +24,12 @@ export default class Key extends React.Component {
     if (noteIsFlat) {
       keyClassName += ' flat';
       key = (
-        <div onClick={this.props.handleKeyClick} className={keyClassName}>
+        <div onMouseDown={this.props.handleKeyClick} className={keyClassName}>
           {NOTE_TO_KEY[this.props.note].toUpperCase()}
         </div>);
     } else {
       key = (
-        <div onClick={this.props.handleKeyClick} className={keyClassName}>
+        <div onMouseDown={this.props.handleKeyClick} className={keyClassName}>
           <div className='key-text'>{NOTE_TO_KEY[this.props.note].toUpperCase()}</div>
         </div>
       );
