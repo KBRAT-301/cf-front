@@ -6,7 +6,9 @@ import {
   NOTES,
   VALID_KEYS,
   KEY_TO_NOTE,
+  NOTE_TO_KEY,
 } from '../keyMap';
+// import './celloAudio';
 
 export default class Keyboard extends React.Component {
   constructor(props) {
@@ -37,11 +39,14 @@ export default class Keyboard extends React.Component {
     this.setState({ pressedKeys: newPressedKeys });
   };
 
+  handleKeyClick = async (e) => {
+    let key = e.target.innerText.toLowerCase();
+    this.playNote(KEY_TO_NOTE[key]);
+  }
+
   playNote = (note) => {
-    // if (!note.isEmpty()) {
-    //   const noteAudio = new Audio(document.getElementById(note).src);
-    //   noteAudio.play();
-    // }
+    const noteAudio = new Audio(document.getElementById(note).src);
+    noteAudio.play();
   }
 
   componentDidMount = () => {
@@ -52,13 +57,24 @@ export default class Keyboard extends React.Component {
   render() {
     const keys = NOTES.map((note, idx) => {
       return (
-        <Key key={idx} note={note} pressedKeys={this.state.pressedKeys}/>
+        <Key key={idx} note={note} pressedKeys={this.state.pressedKeys} handleKeyClick={this.handleKeyClick}/>
+      );
+    });
+
+    const audioFiles = NOTES.map((note, index) => {
+      return (
+        <audio
+          id={note}
+          key={index}
+          src={`../../celloAudio/${note}.wav`}
+        />
       );
     });
 
     return (
       <div className="keyboard">
         {keys}
+        {audioFiles}
       </div>
     );
   };
