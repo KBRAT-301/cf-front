@@ -27,7 +27,7 @@ class Header extends React.Component {
             </Link>
           </NavItem>
           <NavItem className="navItem">
-            <Button size="lg" style={{ backgroundColor: '#f4804f', border: 'none' }}>
+            <Button size="lg" style={{ backgroundColor: 'deeppink', border: 'none' }}>
               LOG IN
             </Button>
           </NavItem>

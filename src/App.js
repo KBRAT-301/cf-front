@@ -28,7 +28,7 @@ class App extends React.Component {
     // const { user, isAuthenticated, isLoading } = this.props.auth0;
     // console.log('app', user, isLoading);
     return (
-      <div className="App">
+      <div className="app">
         <Router>
           <Header />
           <Switch>
