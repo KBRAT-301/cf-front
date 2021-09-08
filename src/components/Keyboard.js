@@ -23,9 +23,9 @@ export default class Keyboard extends React.Component {
       let newPressedKeys = [...this.state.pressedKeys];
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
+        this.setState({ pressedKeys: newPressedKeys });
+        this.playNote(KEY_TO_NOTE[key]);
       }
-      this.setState({ pressedKeys: newPressedKeys });
-      this.playNote(KEY_TO_NOTE[key]);
     }
   };
 
@@ -66,7 +66,7 @@ export default class Keyboard extends React.Component {
         <audio
           id={note}
           key={index}
-          src={`../../celloAudio/${note}.wav`}
+          src={`../../celloAudio/${note}.mp3`}
         />
       );
     });
