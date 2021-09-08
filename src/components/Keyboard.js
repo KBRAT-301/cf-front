@@ -6,7 +6,7 @@ import {
   NOTES,
   VALID_KEYS,
   KEY_TO_NOTE,
-  NOTE_TO_KEY,
+  // NOTE_TO_KEY,
 } from '../keyMap';
 
 export default class Keyboard extends React.Component {
