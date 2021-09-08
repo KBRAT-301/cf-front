@@ -68,3 +68,26 @@ footer {
 footer p {
   margin: 0px;
 }
+
+/*-------------------------------------------------------*/
+
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid deeppink;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.568);
+
+};
+
+.profile p {
+  color: black;
+}
+
+.about:nth-child(even) .profile {
+  justify-content: flex-end;
+}
+
+.about {
+  height: 79vh;
+}

@@ -1,47 +1,46 @@
-import React from 'react';
-import { withAuth0 } from '@auth0/auth0-react';
+import React from "react";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class About extends React.Component {
   render() {
     return (
-      <div style={{ backgroundImage: "url(/img/piano-background.jpg)" }}>
+      <div className="about">
         <h2>About</h2>
 
-        <div style={{
-          display:'flex', 
-          justifyContent: 'flex-start' }} >
-          <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+        <div className="profile">
+          <div>
+            <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+          </div>
           <p>about kyle</p>
         </div>
 
-        <div style={{
-          display:'flex', 
-          justifyContent: 'flex-end' }}>
+        <div className="profile">
           <p>About Brandon</p>
-          <img src="https://via.placeholder.com/150" alt="Brandon Grimes" />
+          <div>
+            <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+          </div>
         </div>
 
-        <div style={{
-          display:'flex', 
-          justifyContent: 'flex-start' }}>
-          <img src="https://via.placeholder.com/150" alt="Ryan Emmans" />
+        <div className="profile">
+          <div>
+            <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+          </div>
           <p>About Ryan</p>
         </div>
 
-        <div style={{
-          display:'flex', 
-          justifyContent: 'flex-end'}}>
+        <div className="profile">
           <p>About Alex</p>
-          <img src="https://via.placeholder.com/150" alt="Alex Grazda" />
-        </div>
-        
-        <div style={{
-          display:'flex', 
-          justifyContent: 'flex-start' }}>
-          <img src="https://via.placeholder.com/150" alt="Tray Chea" />
-          <p>About Tray</p>
+          <div>
+            <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+          </div>
         </div>
 
+        <div className="profile">
+          <div>
+            <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
+          </div>
+          <p>About Tray</p>
+        </div>
       </div>
     );
   }
