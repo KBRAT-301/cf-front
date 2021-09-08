@@ -15,16 +15,12 @@ h1 {
 }
 
 .link {
-  color: #a3c9a3;
+  color: #f4804f;
   text-decoration: none;
 }
 
 .link:hover {
   color: white;
-}
-
-.button {
-  background-color: #a3c9a3;
 }
 
 h1, h2, .navItem, p {

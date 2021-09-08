@@ -9,7 +9,7 @@ class Header extends React.Component {
       <header>
         <Navbar>
           <Navbar.Brand className="m-3">
-            <h1>Carbon Footprint</h1>
+            <h1>Keys!</h1>
           </Navbar.Brand>
           <NavItem className="navItem">
             <Link to="/" className="link">
@@ -17,13 +17,8 @@ class Header extends React.Component {
             </Link>
           </NavItem>
           <NavItem className="navItem">
-            <Link to="/calculator" className="link">
-              Calculator
-            </Link>
-          </NavItem>
-          <NavItem className="navItem">
-            <Link to="/resources" className="link">
-              Resources
+            <Link to="/profile" className="link">
+              Profile
             </Link>
           </NavItem>
           <NavItem className="navItem">
@@ -32,7 +27,7 @@ class Header extends React.Component {
             </Link>
           </NavItem>
           <NavItem className="navItem">
-            <Button size="lg" style={{ backgroundColor: '#a3c9a3', border: 'none' }}>
+            <Button size="lg" style={{ backgroundColor: '#f4804f', border: 'none' }}>
               LOG IN
             </Button>
           </NavItem>
