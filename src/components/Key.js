@@ -18,18 +18,19 @@ export default class Key extends React.Component {
     let key;
     let keyClassName = 'key';
 
-    if (noteIsFlat) {
-      keyClassName += ' flat';
-    }
     if (keyIsPressed) {
       keyClassName += ' pressed';
     }
     if (noteIsFlat) {
-      key = <div className={keyClassName}></div>;
-    } else {
+      keyClassName += ' flat';
       key = (
         <div className={keyClassName}>
-          <div className='key-text'>{this.props.note.toUpperCase()}</div>
+          {/* <div className='key-text'>{NOTE_TO_KEY[this.props.note].toUpperCase()}</div> */}
+        </div>);
+    } else {
+      key = (
+        <div onClick={this.props.handleKeyClick} className={keyClassName}>
+          <div className='key-text'>{NOTE_TO_KEY[this.props.note].toUpperCase()}</div>
         </div>
       );
     }
