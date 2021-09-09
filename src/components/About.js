@@ -7,8 +7,8 @@ class About extends React.Component {
   render() {
     return (
       <div className="about">
-        <Grid centered stackable columns={5}>
-          <Grid.Row mobile={10} tablet={5} computer={1} verticalAlign='top'>
+        <Grid centered stackable columns={7}>
+          <Grid.Row mobile={7} tablet={5} computer={5} verticalAlign='top'>
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/kyle-cohen-b49493213//" target="_blank" rel="noreferrer">
