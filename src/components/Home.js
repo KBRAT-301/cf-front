@@ -5,9 +5,6 @@ import Keyboard from './Keyboard';
 import axios from 'axios';
 // import Recording from './recording';
 
-
-
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -21,8 +18,11 @@ class Home extends React.Component {
     let newRecordedKeys = [...this.state.recordedKeys];
     newRecordedKeys.push(key);
     this.setState({ recordedKeys: newRecordedKeys });
+    console.log('handleRecordKey', key);
   }
+
   handleSave = async (toBeSaved) => {
+    console.log('toBeSaved', toBeSaved);
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
       const config = {
@@ -38,6 +38,7 @@ class Home extends React.Component {
         const newSound = response.data;
         const sound = [...this.state.sound, newSound];
         this.setState({ sound });
+        console.log('saved!', sound);
       } catch (error) {
         res.status(404).send(error);
       }
