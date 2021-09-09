@@ -7,7 +7,7 @@ import { Button } from 'semantic-ui-react';
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
   return (
-    <Button className="logButton" color='pink' onClick={() => loginWithRedirect()}>
+    <Button className="logButton" color='pink' style={{ fontSize: '1.4rem' }}size='massive' onClick={() => loginWithRedirect()}>
       LOG IN
     </Button>
   );

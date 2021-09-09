@@ -48,7 +48,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '20px' }} onClick={this.handleSave(this.state.recordedKeys)}>Save Recording</Button>
+        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave(this.state.recordedKeys)}>Save Recording</Button>
         <Keyboard handleRecordKey={this.handleRecordKey} />
         {/* <Recording/> */}
       </div>

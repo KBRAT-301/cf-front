@@ -1,9 +1,9 @@
 .key {
   background-color: ivory;
-  height: 300px;
-  width: 60px;
+  height: 247px;
+  width: 43px;
   border: 1px solid black;
-  border-radius: 5px 5px 20px 20px;
+  border-radius: 5px 5px 10px 10px;
   user-select: none;
 }
 
@@ -13,13 +13,13 @@
   border: 1px solid white;
   margin-left: -15px;
   margin-right: -15px;
-  height: 200px;
+  height: 165px;
   width: 30px;
   z-index: 2;
   color: ivory;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
-  padding-top: 168px;
+  padding-top: 135px;
 }
 
 .key.pressed,
@@ -40,6 +40,6 @@
   font-size: 1.2rem;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
-  margin-top: 255px;
+  margin-top: 212px;
   pointer-events: none;
 }

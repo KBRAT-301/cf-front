@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Container } from 'semantic-ui-react';
 import * as Tone from 'tone';
 import './Keyboard.css';
 import Key from './Key';
@@ -119,9 +120,7 @@ export default class Keyboard extends React.Component {
   render() {
     const keys = NOTES.map((note, idx) => {
       return (
-        <div className="controls">
-          <Key key={idx} note={note} pressedKeys={this.state.pressedKeys} handleKeyClick={this.handleKeyClick} />
-        </div>
+        <Key key={idx} note={note} pressedKeys={this.state.pressedKeys} handleKeyClick={this.handleKeyClick} />
       );
     });
 
@@ -136,10 +135,14 @@ export default class Keyboard extends React.Component {
     // });
 
     return (
-      <div className="keyboard">
-        {keys}
-        {/* {audioFiles} */}
-      </div>
+      <Grid>
+        <Container className="controls">
+          <div className="keyboard">
+            {keys}
+            {/* {audioFiles} */}
+          </div>
+        </Container>
+      </Grid>
     );
   };
 }
