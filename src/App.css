@@ -1,5 +1,5 @@
 .app {
-  overflow: hidden;
+  overflow: scroll;
   background-image: url('./img/moog.jpg');
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  height: 120px;
+  height: 96px;
   width: 100%;
   top: 0px;
   opacity: 90%;
@@ -30,10 +30,7 @@ h1, h2, p {
 }
 
 .navItem {
-  font-size: 1.3em;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: -50px 20px 0px 20px;
+  font-size: 1.5rem;
 }
 
 .link {
@@ -57,10 +54,15 @@ h1, h2, .navItem, p {
 .home {
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 .controls {
   background-image: url('./img/polyD.png');
+  padding: 380px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* margin-top: 300px; */
 }
 
 .about {
@@ -146,4 +148,8 @@ footer p {
   text-align: center;
   font-size: 1.1em;
 
+@media (max-width: 768px) {
+  .controls {
+    transform: rotate(90deg);
+  }
 }
