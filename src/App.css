@@ -1,26 +1,26 @@
 .app {
-  overflow: scroll;
+  /* overflow: scroll; */
   background-image: url('./img/moog.jpg');
-  background-position: center;
+  background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 96px 0px 60px 0px;
 }
 
 header {
   position: fixed;
-  background-color: #000000;
+  background-color: #262626;
   display: flex;
   justify-content: center;
   vertical-align: middle;
   height: 96px;
   width: 100%;
   top: 0px;
-  opacity: 90%;
   border-bottom: 1px solid gray;
   z-index: 1;
 }
@@ -52,9 +52,12 @@ h1, h2, .navItem, p {
 }
 
 .home {
+  display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  height: 100%;
+  margin-top: 50px;
 }
 
 .controls {
@@ -62,17 +65,17 @@ h1, h2, .navItem, p {
   padding: 380px;
   background-size: 100%;
   background-repeat: no-repeat;
-  /* margin-top: 300px; */
 }
 
 .about {
-  /* height: 79vh; */
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
   /* display: flex;
   flex-direction: row; */
   /* justify-content: space-around; */
-  padding: 50px 100px;
+  /* padding: 50px 100px; */
   /* background-color: red; */
-  margin-top: 140px;
 }
 
 .bio {
@@ -80,7 +83,7 @@ h1, h2, .navItem, p {
   /* flex-direction: column; */
   /* flex-wrap: nowrap; */
   /* width: 5%; */
-  margin: 5px;
+  margin: 3px;
   padding: 30px;
   border: 1px solid darkgray;
   border-radius: 10px;
@@ -88,7 +91,7 @@ h1, h2, .navItem, p {
   opacity: 90%;
   /* justify-content: flex-start; */
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .bioImg {
@@ -102,12 +105,12 @@ h1, h2, .navItem, p {
   border-radius: 50%;
   width: 100%;
   box-shadow: 2px 2px 4px gray;
-  transition: .2s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 .bioImg img:hover {
   box-shadow: 2px 2px 4px black;
-  transition: .2s ease-in-out;
+  transition: .3s ease-in-out;
   opacity: 85%;
 }
 
@@ -126,11 +129,11 @@ h1, h2, .navItem, p {
   font-size: 1rem;
   line-height: 1.3rem;
   text-indent: 1.5rem;
-  margin: 0px 15px 20px 15px;
+  margin-bottom: 20px;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   display: flex;
   justify-content: center;
@@ -150,7 +153,14 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  header {
+    height: 192px;
+  }
   .controls {
     transform: rotate(90deg);
+  }
+
+  .about {
+    margin: 50% 0% 30% 0%;
   }
 }
