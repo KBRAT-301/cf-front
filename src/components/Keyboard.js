@@ -34,7 +34,7 @@ export default class Keyboard extends React.Component {
         this.setState({ pressedKeys: newPressedKeys });
         // this.setState({ recordedKeys: newRecordedKeys });
         this.props.handleRecordKey(key);
-        synth.triggerAttack(KEY_TO_NOTE[key], now);
+        synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         // this.playNote(KEY_TO_NOTE[key]);
       }
     }
@@ -64,7 +64,7 @@ export default class Keyboard extends React.Component {
 
 
   handleKeyUp = (e) => {
-    console.log(this.state.recordedKeys);
+    // console.log(this.state.recordedKeys);
     let key = e.key;
     let index = this.state.pressedKeys.indexOf(e.key);
     let newPressedKeys = [...this.state.pressedKeys];
@@ -73,7 +73,7 @@ export default class Keyboard extends React.Component {
       newPressedKeys.splice(index, 1);
       this.setState({ pressedKeys: newPressedKeys });
       // this.setState({ recordedKeys: newRecordedKeys });
-      synth.triggerRelease(KEY_TO_NOTE[key], now);
+      // synth.triggerRelease(KEY_TO_NOTE[key], now);
     }
   };
 
