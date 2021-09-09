@@ -13,6 +13,7 @@ export default class Controls extends React.Component {
     return (
       <>
         <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.props.handleSaveButton}>Save Recording</Button>
+        <Button className="instrumentButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.props.handleInstrumentChange}>Synth/Piano</Button>
       </>
     );
   }

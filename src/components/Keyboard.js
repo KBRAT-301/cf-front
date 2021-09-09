@@ -23,6 +23,7 @@ export default class Keyboard extends React.Component {
       isPiano: true,
     };
   }
+
   handleKeyDown = (e) => {
     if (!e.repeat) {
       let key = e.key;
@@ -90,6 +91,10 @@ export default class Keyboard extends React.Component {
     window.addEventListener('mouseover', this.handleMouseOver);
   };
 
+  handleInstrumentChange = () => {
+    this.state.isPiano ? this.setState({ isPiano: false }) : this.setState({ isPiano: true });
+  };
+
   render() {
     const keys = NOTES.map((note, idx) => {
       return (
@@ -110,7 +115,9 @@ export default class Keyboard extends React.Component {
     return (
       <Grid>
         <Container className="controls">
-          <Controls className="" handleSaveButton={this.props.handleSaveButton}/>
+          <Controls className=""
+            handleSaveButton={this.props.handleSaveButton}
+            handleInstrumentChange={this.handleInstrumentChange}/>
           <div className="keyboard">
             {keys}
             {audioFiles}
