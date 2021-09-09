@@ -13,13 +13,13 @@
   border: 1px solid white;
   margin-left: -15px;
   margin-right: -15px;
-  height: 200px;
+  height: 165px;
   width: 30px;
   z-index: 2;
   color: ivory;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
-  padding-top: 173px;
+  padding-top: 135px;
 }
 
 .key.pressed,

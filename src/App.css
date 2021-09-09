@@ -1,5 +1,5 @@
 .app {
-  overflow: hidden;
+  overflow: scroll;
   background-image: url('./img/moog.jpg');
   background-position: center;
   background-size: cover;
@@ -146,4 +146,10 @@ footer p {
   margin: auto;
   text-align: center;
   font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    transform: rotate(90deg);
+  }
 }
