@@ -39,7 +39,8 @@ class Home extends React.Component {
         const newSound = response.data;
         const sound = [...this.state.sound, newSound];
         this.setState({ sound });
-        console.log('saved!', sound);
+        this.setState({ recordedKeys: [] });
+        console.log('saved!');
       } catch (error) {
         res.status(404).send(error);
       }
@@ -49,8 +50,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave}>Save Recording</Button>
-        <Keyboard handleRecordKey={this.handleRecordKey} />
+        {/* <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave}>Save Recording</Button> */}
+        <Keyboard handleRecordKey={this.handleRecordKey} handleSaveButton={this.handleSave}/>
         {/* <Recording/> */}
       </div>
     );
