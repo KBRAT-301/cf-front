@@ -20,53 +20,60 @@ class App extends React.Component {
     this.state = {
       auth: this.props.auth0.isAuthenticated,
       sound: [],
-      selectedSound: null,
+      recordedKeys: [],
     };
   }
 
-  // addSound = async (soundInfo) => {
-  //   this.props.auth0.getIdTokenClaims().then(async (res) => {
-  //     const jwt = res.__raw;
-  //     const config = {
-  //       headers: { Authorization: `Bearer ${jwt}` },
-  //       method: 'post',
-  //       baseURL: SERVER,
-  //       url: '/sound',
-  //       data: soundInfo,
-  //       params: { email: this.props.auth0.user.email },
-  //     };
-  //     try {
-  //       const response = await axios(config);
-  //       const newSound = response.data;
-  //       const sound = [...this.state.sound, newSound];
-  //       this.setState({ sound });
-  //     } catch (error) {
-  //       res.status(404).send(error);
-  //     }
-  //   });
-  // };
-
-  getSound = async () => {
-    console.log('HERE');
+  handleSave = async (songs) => {
+    console.log('toBeSaved', songs);
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
-      console.log(jwt);
       const config = {
-        headers: { Authorization: `Bearer ${jwt}` },
-        method: 'get',
-        baseURL: SERVER,
-        url: '/',
-        params: { email: this.props.auth0.user.email },
+        headers: { 'Authorization': `Bearer ${jwt}` },
+        method: 'post',
+        baseURL: process.env.REACT_APP_API,
+        url: '/sound',
+        data: {keys: songs.recordedKeys, email: this.props.auth0.user.email,
+          name: this.props.auth0.user.name, },
       };
-      await axios(config)
-        .then((response) => {
-          console.log('Got a Response?', response.data);
-        })
-        .catch((err) => {
-          res.status(400).send(err);
-        });
-    });
+      try {
+        const response = await axios(config);
+        console.log('MORE FLAGS?', config);
+        const newSound = response.data;
+        console.log('PICK ME!', newSound);
+        const sound = [...this.state.sound, newSound];
+        this.setState({ sound });
+        console.log('saved!');
+      } catch (error) {
+        console.log(error);
+      }
+    }).catch(error => console.error(error));
   };
+
+  getSound = async () => {
+    try{
+      console.log('HERE');
+      await this.props.auth0.getIdTokenClaims().then(async (res) => {
+        console.log(res);
+        const jwt = await res.__raw;
+        console.log(jwt);
+        const config = {
+          headers: { Authorization: `Bearer ${jwt}` },
+          method: 'get',
+          baseURL: SERVER,
+          url: '/',
+          params: { email: this.props.auth0.user.email },
+        };
+        await axios(config)
+          .then((response) => {
+            console.log('Got a Response?', response.data);
+          });
+      });
+    } catch(error) {
+      console.error(error);
+    }
+  };
+
 
   updateSound = async (sound) => {
     this.props.auth0.getIdTokenClaims().then(async (res) => {
@@ -104,28 +111,26 @@ class App extends React.Component {
         params: { email: this.props.auth0.user.email },
       };
       await axios(config);
-      const sounds = this.state.sounds.filter(
+      const sounds = this.state.sound.filter(
         (sound) => sound._id !== soundToDelete._id
       );
       this.setState({ sounds });
     });
   };
 
-  handleUpdateSound = (soundToUpdate) => {
-    this.setState({ selectedSound: soundToUpdate});
-  };
 
   render() {
+    console.log(this.props.auth0.user);
     return (
       <div className="app">
         <Router>
           <Header />
           <Switch>
             <Route exact path="/">
-              <Home handleSave={this.addSound}/>
+              <Home handleSave={this.handleSave}/>
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile getSound={this.getSound} updateSound={this.updateSound} deleteSound={this.deleteSound}/>
             </Route>
             <Route exact path="/about">
               <About />
