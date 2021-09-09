@@ -28,6 +28,11 @@
   border: 1px solid white;
 }
 
+.key.flat.pressed,
+.key:hover {
+  border: 1px solid black;
+}
+
 .key-text {
   position: relative;
   color: black;

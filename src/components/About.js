@@ -1,84 +1,106 @@
 import React from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
-import { Button } from 'semantic-ui-react';
+import { Grid, Container, Image, Button } from 'semantic-ui-react';
 
 class About extends React.Component {
 
   render() {
     return (
-      <>
-        <div className="about">
-          <div className="profile">
-            <div className="profileImg">
-              <img src="https://via.placeholder.com/150" alt="Kyle Cohen" />
-            </div>
-            <h5>Kyle Cohen</h5>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. "
-            </p>
-            <div>
-              <Button circular color='linkedin' icon='linkedin'>
-                  
-              </Button>
-            </div>
-          </div>
+      <div className="about">
+        <Grid centered stackable columns={5}>
+          <Grid.Row mobile={10} tablet={5} computer={1} verticalAlign='top'>
+            <Grid.Column className="bio">
+              <Container className="bioImg">
+                <a href="https://www.linkedin.com/in/kyle-cohen-b49493213//" target="_blank" rel="noreferrer">
+                  <Image src="https://media-exp1.licdn.com/dms/image/C4E03AQFICXoAfN1QMQ/profile-displayphoto-shrink_800_800/0/1626655654589?e=1636588800&v=beta&t=d7Og1lBL-EM-S_aQXGPYQ4tGLO8swA3I8BWErw0oT74" alt='Kyle Cohen' />
+                  <h3>Kyle Cohen</h3></a>
+              </Container>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat."
+              </p>
+              <Container textAlign='center'>
+                <a href="https://www.linkedin.com/in/kyle-cohen-b49493213//" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                <a href="https://github.com/kylecohen14" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='black' icon='github' /></a>
+              </Container>
+            </Grid.Column>
 
-          <div className="profile">
-            <div className="profileImg">
-              <img src="https://via.placeholder.com/150" alt="Brandon Rimes" />
-            </div>
-            <h5>Brandon Rimes</h5>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. "
-            </p>
-          </div>
+            <Grid.Column className="bio">
+              <Container className="bioImg">
+                <a href="https://www.linkedin.com/in/brandon-rimes/" target="_blank" rel="noreferrer">
+                  <img src="https://avatars.githubusercontent.com/u/77939170?v=4" alt="Brandon Rimes" />
+                  <h3>Brandon Rimes</h3></a>
+              </Container>
+              <p>
+                Brandon Rimes is a dynamic autodidact and abstract intellectual. He gets excited about planet-positive projects as well as exquisite user experience web design. He enjoys being immersed in nature, gardening, playing various musical instruments, creating ornate objects, traveling, learning, teaching, connecting with and helping people, and sharing these things with his fellow humans.
+              </p>
+              <Container textAlign='center'>
+                <a href="https://www.linkedin.com/in/brandon-rimes/" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                <a href="https://github.com/BrandonRimes" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='black' icon='github' /></a>
+                <a href="https://brandonrimes.net/" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='pink' icon='desktop' /></a>
+              </Container>
+            </Grid.Column>
 
-          <div className="profile">
-            <div className="profileImg">
-              <img src="https://via.placeholder.com/150" alt="Ryan Emmans" />
-            </div>
-            <h5>Ryan Emmans</h5>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. "
-            </p>
-          </div>
+            <Grid.Column className="bio">
+              <Container className="bioImg">
+                <a href="https://www.linkedin.com/in/ryanemmans/" target="_blank" rel="noreferrer">
+                  <img src="https://avatars.githubusercontent.com/u/86586274?v=4" alt="Ryan Emmans" />
+                  <h3>Ryan Emmans</h3></a>
+              </Container>
+              <p>
+                Ryan is a Seattle based software developer previously from Chicago. Along with an extensive and diverse background in craft bartending and furniture making, he has a devoted passion for all platforms of visual design. In his free time, he finds pleasure in hiking, riding bikes, nerding out over architecture, and hanging out with his cat.
+              </p>
+              <Container textAlign='center'>
+                <a href="https://www.linkedin.com/in/ryanemmans/" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                <a href="https://github.com/ryanemmans" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='black' icon='github' /></a>
+              </Container>
+            </Grid.Column>
 
-          <div className="profile">
-            <div className="profileImg">
-              <img src="https://via.placeholder.com/150" alt="Alex Grazda" />
-            </div>
-            <h5>Alex Grazda</h5>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. "
-            </p>
-          </div>
+            <Grid.Column className="bio">
+              <Container className="bioImg">
+                <a href="https://www.linkedin.com/in/alex-grazda/" target="_blank" rel="noreferrer">
+                  <img src="https://media-exp1.licdn.com/dms/image/C5603AQGAX40WixVeRQ/profile-displayphoto-shrink_800_800/0/1631133958636?e=1636588800&v=beta&t=arRt3kVTt1zFxuB4vyi2UO1I9AatXRnD2vszkifd5_Q" alt="Alex Grazda" />
+                  <h3>Alex Grazda</h3></a>
+              </Container>
+              <p>
+                Alex is a software engineering student at Code Fellows. He has worked 18 years in retail customer service and 5 years as a Project Manager. Alex has always been intrigued by software development.He is changing careers into an industry that has never-ending potential. He is passionate about traveling. He would love to work for a company that allows him to work remotely and and live out his passion.
+              </p>
+              <Container textAlign='center'>
+                <a href="https://www.linkedin.com/in/alex-grazda/" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                <a href="https://github.com/agrazda" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='black' icon='github' /></a>
+              </Container>
+            </Grid.Column>
 
-          <div className="profile">
-            <div className="profileImg">
-              <img src="https://via.placeholder.com/150" alt="Tray Chea" />
-            </div>
-            <h5>Tray Chea</h5>
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. "
-            </p>
-          </div>
-        </div>
-      </>
+            <Grid.Column className="bio">
+              <Container className="bioImg">
+                <a href="https://www.linkedin.com/in/chattray-chea/" target="_blank" rel="noreferrer">
+                  <img src="https://avatars.githubusercontent.com/u/84699682?v=4" alt="Tray Chea" />
+                  <h3>Tray Chea</h3></a>
+              </Container>
+              <p>
+                Tray is a Seattle based software developer. He is a former Air Force service member, serving for 10 years.Within the service he honed his skills in Aerospace Maintenance and Operations/Logistics management. He relishes AI, Ancient Languages, and Animal/Plant Conservation.
+              </p>
+              <Container textAlign='center'>
+                <a href="https://www.linkedin.com/in/chattray-chea/" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                <a href="https://github.com/Zavvy-Glitch" target="_blank" rel="noreferrer">
+                  <Button size='large' circular color='black' icon='github' /></a>
+              </Container>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
     );
   }
 }
