@@ -28,8 +28,11 @@
   border: 1px solid white;
 }
 
-.key.flat.pressed,
 .key:hover {
+  border: 1px solid white;
+}
+
+.key.flat:hover {
   border: 1px solid black;
 }
 

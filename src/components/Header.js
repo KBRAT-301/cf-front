@@ -15,7 +15,7 @@ class Header extends React.Component {
 
     return (
       <header>
-        <Segment inverted style={{ height: '100%' }}>
+        <Segment style={{ height: '100%', weight: '100%', backgroundColor: '#262626' }}>
           <Menu inverted pointing secondary style={{ justifyContent: 'center', marginTop: '-15px', flexFlow: 'row wrap' }}>
             <Menu.Item>
               {/* <h1 style={{ fontSize: '3rem', marginBottom: '-5px'}}>Keys!</h1> */}
