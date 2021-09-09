@@ -20,7 +20,8 @@ export default class Keyboard extends React.Component {
     this.state = {
       pressedKeys: [],
       mouseIsDown: false,
-      isPiano: true,
+      instrument: 'piano',
+      isRecording: false,
     };
   }
 
@@ -31,9 +32,13 @@ export default class Keyboard extends React.Component {
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
         this.setState({ pressedKeys: newPressedKeys });
-        this.props.handleRecordKey(key);
         // synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         this.playNote(KEY_TO_NOTE[key]);
+        if(this.state.isRecording) {
+          this.props.handleRecordKey(key);
+        }
+        console.log('isRecording',this.state.isRecording);
+        console.log('toberecorded',this.props.recordedKeys);
       }
     }
   };
@@ -57,13 +62,24 @@ export default class Keyboard extends React.Component {
   };
 
   playNote = (note) => {
-    if (this.state.isPiano) {
-      console.log('isPiano!');
+    switch(this.state.instrument) {
+    case 'piano':
       const noteAudio = new Audio(document.getElementById(note).src);
       noteAudio.play();
-    } else {
+      break;
+    case 'synth':
+      synth.triggerAttackRelease(note, '8n');
+      break;
+    default:
       synth.triggerAttackRelease(note, '8n');
     }
+    // if(this.state.isPiano) {
+    //   console.log('isPiano!');
+    //   const noteAudio = new Audio(document.getElementById(note).src);
+    //   noteAudio.play();
+    // } else {
+    //   synth.triggerAttackRelease(note, '8n');
+    // }
   };
 
   handleMouseDown = (e) => {
@@ -91,9 +107,15 @@ export default class Keyboard extends React.Component {
     window.addEventListener('mouseover', this.handleMouseOver);
   };
 
-  handleInstrumentChange = () => {
-    this.state.isPiano ? this.setState({ isPiano: false }) : this.setState({ isPiano: true });
+  handleInstrumentChange = (e) => {
+    // this.state.isPiano ? this.setState({ isPiano: false }) : this.setState({ isPiano: true });
+    this.setState({ instrument: e.target.id });
   };
+
+  handleRecording = () => {
+    console.log('handleRecording');
+    this.state.isRecording ? this.setState({ isRecording: false }) : this.setState({ isRecording: true });
+  }
 
   render() {
     const keys = NOTES.map((note, idx) => {
@@ -116,7 +138,9 @@ export default class Keyboard extends React.Component {
       <Grid>
         <Container className="controlsImg">
           <Controls className="" handleSaveButton={this.props.handleSaveButton}
-            handleInstrumentChange={this.handleInstrumentChange} />
+            handleInstrumentChange={this.handleInstrumentChange}
+            handleRecordButton={this.handleRecording}
+            recordedKeys={this.props.recordedKeys}/>
           <div className="keyboard">
             {keys}
             {audioFiles}
