@@ -1,9 +1,10 @@
 import React from 'react';
-import { Menu, Segment, Icon } from 'semantic-ui-react';
+import { Image, Menu, Segment, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from './LoginButton.js';
 import LogoutButton from './LogoutButton.js';
+import logo from '../img/logo.png';
 
 class Header extends React.Component {
   state = { activeItem: 'home' }
@@ -15,18 +16,18 @@ class Header extends React.Component {
     return (
       <header>
         <Segment inverted style={{ height: '100%' }}>
-          <Menu inverted pointing secondary style={{ justifyContent: 'center', marginTop: '-20px' }}>
+          <Menu inverted pointing secondary style={{ justifyContent: 'center', marginTop: '-15px' }}>
             <Menu.Item>
-              <h1 style={{ fontSize: '3rem' }}>Keys!</h1>
+              {/* <h1 style={{ fontSize: '3rem', marginBottom: '-5px'}}>Keys!</h1> */}
+              <Image src={logo} alt="keys logo" style={{ height: '70px' }} />
             </Menu.Item>
             <Menu.Item
               link
               className="navItem"
               name='home'
-              size='big'
               active={activeItem === 'home'}
               onClick={this.handleItemClick}>
-              <Link to="/" style={{ textTransform: 'uppercase', fontWeight: 'bold' }} >
+              <Link to="/" style={{ fontSize: '1.5rem', textTransform: 'uppercase', fontWeight: 'bold' }} >
                 <Icon name='music' />
                 Home
               </Link>
@@ -35,10 +36,9 @@ class Header extends React.Component {
               link
               className="navItem"
               name='profile'
-              size='big'
               active={activeItem === 'profile'}
               onClick={this.handleItemClick}>
-              <Link to="/profile" style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+              <Link to="/profile" style={{ fontSize: '1.5rem', textTransform: 'uppercase', fontWeight: 'bold' }}>
                 <Icon name='child' />
                 Profile
               </Link>
@@ -47,10 +47,9 @@ class Header extends React.Component {
               link
               className="navItem"
               name='about'
-              size='big'
               active={activeItem === 'about'}
               onClick={this.handleItemClick}>
-              <Link to="/about" style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+              <Link to="/about" style={{ fontSize: '1.5rem', textTransform: 'uppercase', fontWeight: 'bold' }}>
                 <Icon name='users' />
                 About
               </Link>

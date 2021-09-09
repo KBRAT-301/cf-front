@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  height: 90px;
+  height: 120px;
   width: 100%;
   top: 0px;
   opacity: 90%;
@@ -33,13 +33,13 @@ h1, h2, p {
   font-size: 1.3em;
   text-transform: uppercase;
   font-weight: 700;
-  margin: 0px 20px;
+  margin: -50px 20px 0px 20px;
 }
 
-/* Link.link {
-  color: deeppink important;
+.link {
+  color: deeppink !important;
   text-decoration: none;
-} */
+}
 
 Link.link:hover {
   color: white;
@@ -51,6 +51,16 @@ h1, h2, .navItem, p {
 
 .logButton {
   font-family: 'Ubuntu', sans-serif;
+  height: 50px;
+}
+
+.home {
+  flex-direction: column;
+  text-align: center;
+}
+
+.controls {
+  background-image: url('./img/polyD.png');
 }
 
 .about {
@@ -95,6 +105,7 @@ h1, h2, .navItem, p {
 .bioImg img:hover {
   box-shadow: 2px 2px 4px black;
   transition: .2s ease-in-out;
+  opacity: 85%;
 }
 
 .bioImg h3 {

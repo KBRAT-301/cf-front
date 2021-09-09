@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 import { withAuth0 } from '@auth0/auth0-react';
 import Keyboard from './Keyboard';
 import axios from 'axios';
@@ -46,8 +47,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Keyboard handleRecordKey={this.handleRecordKey}/>
-        <button onClick={this.handleSave(this.state.recordedKeys)}>Save Recording</button>
+        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '20px' }} onClick={this.handleSave(this.state.recordedKeys)}>Save Recording</Button>
+        <Keyboard handleRecordKey={this.handleRecordKey} />
         {/* <Recording/> */}
       </div>
     );

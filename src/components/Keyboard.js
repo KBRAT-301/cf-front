@@ -40,7 +40,7 @@ export default class Keyboard extends React.Component {
   };
 
 
-  
+
   // handleSavedNotes = () => {
   //   this.props.auth0.getIdTokenClaims().then(async res => {
   //     const jwt = res.__raw;
@@ -61,7 +61,7 @@ export default class Keyboard extends React.Component {
   // }
 
 
-  
+
   handleKeyUp = (e) => {
     console.log(this.state.recordedKeys);
     let key = e.key;
@@ -80,7 +80,7 @@ export default class Keyboard extends React.Component {
 
   handleKeyClick = (e) => {
     let key = e.target.innerText.toLowerCase();
-    if(VALID_KEYS.includes(key)) {
+    if (VALID_KEYS.includes(key)) {
       this.playNote(KEY_TO_NOTE[key]);
     }
   };
@@ -96,9 +96,9 @@ export default class Keyboard extends React.Component {
   };
 
   handleMouseOver = (e) => {
-    if(this.state.mouseIsDown) {
+    if (this.state.mouseIsDown) {
       let key = e.target.innerText.toLowerCase();
-      if(VALID_KEYS.includes(key)) {
+      if (VALID_KEYS.includes(key)) {
         this.playNote(KEY_TO_NOTE[key]);
       };
     }
@@ -119,7 +119,9 @@ export default class Keyboard extends React.Component {
   render() {
     const keys = NOTES.map((note, idx) => {
       return (
-        <Key key={idx} note={note} pressedKeys={this.state.pressedKeys} handleKeyClick={this.handleKeyClick}/>
+        <div className="controls">
+          <Key key={idx} note={note} pressedKeys={this.state.pressedKeys} handleKeyClick={this.handleKeyClick} />
+        </div>
       );
     });
 
