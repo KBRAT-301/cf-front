@@ -10,7 +10,8 @@ import Profile from './components/Profile';
 import About from './components/About';
 import Footer from './components/Footer';
 
-const SERVER = process.env.REACT_APP_SERVER_URL;
+// const SERVER = process.env.REACT_APP_SERVER_URL;
+const SERVER = process.env.REACT_APP_API;
 
 class App extends React.Component {
   constructor(props) {
@@ -22,27 +23,27 @@ class App extends React.Component {
     };
   }
 
-  addSound = async (soundInfo) => {
-    this.props.auth0.getIdTokenClaims().then(async (res) => {
-      const jwt = res.__raw;
-      const config = {
-        headers: { Authorization: `Bearer ${jwt}` },
-        method: 'post',
-        baseURL: SERVER,
-        url: '/sound',
-        data: soundInfo,
-        params: { email: this.props.auth0.user.email },
-      };
-      try {
-        const response = await axios(config);
-        const newSound = response.data;
-        const sound = [...this.state.sound, newSound];
-        this.setState({ sound });
-      } catch (error) {
-        res.status(404).send(error);
-      }
-    });
-  };
+  // addSound = async (soundInfo) => {
+  //   this.props.auth0.getIdTokenClaims().then(async (res) => {
+  //     const jwt = res.__raw;
+  //     const config = {
+  //       headers: { Authorization: `Bearer ${jwt}` },
+  //       method: 'post',
+  //       baseURL: SERVER,
+  //       url: '/sound',
+  //       data: soundInfo,
+  //       params: { email: this.props.auth0.user.email },
+  //     };
+  //     try {
+  //       const response = await axios(config);
+  //       const newSound = response.data;
+  //       const sound = [...this.state.sound, newSound];
+  //       this.setState({ sound });
+  //     } catch (error) {
+  //       res.status(404).send(error);
+  //     }
+  //   });
+  // };
 
   getSound = async () => {
     console.log('HERE');
@@ -120,7 +121,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home handleSave={this.addSound}/>
             </Route>
             <Route exact path="/profile">
               <Profile />
