@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   margin: 96px 0px 60px 0px;
 }
 
@@ -56,13 +56,13 @@ h1, h2, .navItem, p {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   margin-top: 50px;
 }
 
-.controls {
+.controlsImg {
   background-image: url('./img/polyD.png');
-  padding: 380px;
+  padding: 7.3%;
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -70,7 +70,7 @@ h1, h2, .navItem, p {
 .about {
   width: 100vw;
   height: 100vh;
-  margin-top: 50px;
+  margin: 50px 0px;
   /* display: flex;
   flex-direction: row; */
   /* justify-content: space-around; */
@@ -156,7 +156,7 @@ footer p {
   header {
     height: 192px;
   }
-  .controls {
+  .controlsImg {
     transform: rotate(90deg);
   }
 
@@ -164,3 +164,5 @@ footer p {
     margin: 50% 0% 30% 0%;
   }
 }
+
+/* 2 boxes, one media minwidth 768, one media minwidth 1024. */

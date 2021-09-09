@@ -1,7 +1,7 @@
 .key {
   background-color: ivory;
   height: 247px;
-  width: 43px;
+  width: 43.2px;
   border: 1px solid black;
   border-radius: 5px 5px 10px 10px;
   user-select: none;
@@ -46,3 +46,4 @@
   margin-top: 212px;
   pointer-events: none;
 }
+
