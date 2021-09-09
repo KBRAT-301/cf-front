@@ -16,16 +16,13 @@ class About extends React.Component {
                   <h3>Kyle Cohen</h3></a>
               </Container>
               <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat."
+                Kyle is a Michigan based software developer. Lover of the outdoors, most of his free time is spent fishing, hunting, and mountain biking. After serving in the United States Marine Corp he moved into the HVAC trade as a sheet metal worker/welder before finding his place in the Tech industry.
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/kyle-cohen-b49493213//" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                  <Button size='medium' circular color='linkedin' icon='linkedin' /></a>
                 <a href="https://github.com/kylecohen14" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='black' icon='github' /></a>
+                  <Button size='medium' circular color='black' icon='github' /></a>
               </Container>
             </Grid.Column>
 
@@ -40,11 +37,11 @@ class About extends React.Component {
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/brandon-rimes/" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                  <Button size='medium' circular color='linkedin' icon='linkedin' /></a>
                 <a href="https://github.com/BrandonRimes" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='black' icon='github' /></a>
+                  <Button size='medium' circular color='black' icon='github' /></a>
                 <a href="https://brandonrimes.net/" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='pink' icon='desktop' /></a>
+                  <Button size='medium' circular color='pink' icon='desktop' /></a>
               </Container>
             </Grid.Column>
 
@@ -59,9 +56,9 @@ class About extends React.Component {
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/ryanemmans/" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                  <Button size='medium' circular color='linkedin' icon='linkedin' /></a>
                 <a href="https://github.com/ryanemmans" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='black' icon='github' /></a>
+                  <Button size='medium' circular color='black' icon='github' /></a>
               </Container>
             </Grid.Column>
 
@@ -72,13 +69,13 @@ class About extends React.Component {
                   <h3>Alex Grazda</h3></a>
               </Container>
               <p>
-                Alex is a software engineering student at Code Fellows. He has worked 18 years in retail customer service and 5 years as a Project Manager. Alex has always been intrigued by software development.He is changing careers into an industry that has never-ending potential. He is passionate about traveling. He would love to work for a company that allows him to work remotely and and live out his passion.
+                Alex is a software engineering student at Code Fellows. He has worked 18 years in retail customer service and 5 years as a Project Manager. Alex has always been intrigued by software development. He is changing careers into an industry that has never-ending potential. He is passionate about traveling. He would love to work for a company that allows him to work remotely and and live out his passion.
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/alex-grazda/" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                  <Button size='medium' circular color='linkedin' icon='linkedin' /></a>
                 <a href="https://github.com/agrazda" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='black' icon='github' /></a>
+                  <Button size='medium' circular color='black' icon='github' /></a>
               </Container>
             </Grid.Column>
 
@@ -93,9 +90,9 @@ class About extends React.Component {
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/chattray-chea/" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='linkedin' icon='linkedin' /></a>
+                  <Button size='medium' circular color='linkedin' icon='linkedin' /></a>
                 <a href="https://github.com/Zavvy-Glitch" target="_blank" rel="noreferrer">
-                  <Button size='large' circular color='black' icon='github' /></a>
+                  <Button size='medium' circular color='black' icon='github' /></a>
               </Container>
             </Grid.Column>
           </Grid.Row>

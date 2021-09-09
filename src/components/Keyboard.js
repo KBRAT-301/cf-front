@@ -3,6 +3,7 @@ import { Grid, Container } from 'semantic-ui-react';
 import * as Tone from 'tone';
 import './Keyboard.css';
 import Key from './Key';
+import Controls from './Controls';
 import {
   NOTES,
   VALID_KEYS,
@@ -17,23 +18,28 @@ export default class Keyboard extends React.Component {
     super(props);
     this.state = {
       pressedKeys: [],
-      recordedKeys: [],
       mouseIsDown: false,
+      instrument: 'piano',
+      isRecording: false,
     };
   }
+
   handleKeyDown = (e) => {
     console.log('FIND ME', e);
     if (!e.repeat) {
       let key = e.key;
       let newPressedKeys = [...this.state.pressedKeys];
-      let newRecordedKeys = [...this.state.recordedKeys];
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
-        newRecordedKeys.push(key);
         this.setState({ pressedKeys: newPressedKeys });
-        this.props.handleRecordKey(key);
         let keyNote = synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
-        this.props.handleRecordSound(keyNote);
+        // synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
+        this.playNote(KEY_TO_NOTE[key]);
+        if(this.state.isRecording) {
+          this.props.handleRecordKey(keyNote);
+        }
+        console.log('isRecording',this.state.isRecording);
+        console.log('toberecorded',this.props.recordedKeys);
       }
     }
   };
@@ -45,10 +51,9 @@ export default class Keyboard extends React.Component {
     if (newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
       newPressedKeys.splice(index, 1);
       this.setState({ pressedKeys: newPressedKeys });
+      // synth.triggerRelease(KEY_TO_NOTE[key], now);
     }
   };
-
-
 
   handleKeyClick = (e) => {
     let key = e.target.innerText.toLowerCase();
@@ -59,9 +64,24 @@ export default class Keyboard extends React.Component {
   };
 
   playNote = (note) => {
-    console.log('I NEED MOAR', note);
-    synth.triggerAttackRelease(note, '8n');
-    // this.handleRecordSound(note);
+    switch(this.state.instrument) {
+    case 'piano':
+      const noteAudio = new Audio(document.getElementById(note).src);
+      noteAudio.play();
+      break;
+    case 'synth':
+      synth.triggerAttackRelease(note, '8n');
+      break;
+    default:
+      synth.triggerAttackRelease(note, '8n');
+    }
+    // if(this.state.isPiano) {
+    //   console.log('isPiano!');
+    //   const noteAudio = new Audio(document.getElementById(note).src);
+    //   noteAudio.play();
+    // } else {
+    //   synth.triggerAttackRelease(note, '8n');
+    // }
   };
 
   handleMouseDown = (e) => {
@@ -91,6 +111,16 @@ export default class Keyboard extends React.Component {
     window.addEventListener('mouseover', this.handleMouseOver);
   };
 
+  handleInstrumentChange = (e) => {
+    // this.state.isPiano ? this.setState({ isPiano: false }) : this.setState({ isPiano: true });
+    this.setState({ instrument: e.target.id });
+  };
+
+  handleRecording = () => {
+    console.log('handleRecording');
+    this.state.isRecording ? this.setState({ isRecording: false }) : this.setState({ isRecording: true });
+  }
+
   render() {
     const keys = NOTES.map((note, idx) => {
       return (
@@ -98,11 +128,26 @@ export default class Keyboard extends React.Component {
       );
     });
 
+    const audioFiles = NOTES.map((note, index) => {
+      return (
+        <audio
+          id={note}
+          key={index}
+          src={`../../celloAudio/${note}.mp3`}
+        />
+      );
+    });
+
     return (
       <Grid>
-        <Container className="controls">
+        <Container className="controlsImg">
+          <Controls className="" handleSaveButton={this.props.handleSaveButton}
+            handleInstrumentChange={this.handleInstrumentChange}
+            handleRecordButton={this.handleRecording}
+            recordedKeys={this.props.recordedKeys}/>
           <div className="keyboard">
             {keys}
+            {audioFiles}
           </div>
         </Container>
       </Grid>
