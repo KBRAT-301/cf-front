@@ -12,7 +12,7 @@ export default class Controls extends React.Component {
   render() {
     return (
       <Container textAlign='center'>
-        <Menu vertical style={{ margin: '-50px 0px 47px 52px', boxShadow: '0px 0px 5px black' }}>
+        <Menu vertical style={{ margin: '-50px 0px 47px 52px', opacity: '90%', boxShadow: '0px 0px 5px black' }}>
           <Dropdown item text='Instruments'>
             <Dropdown.Menu>
               <Dropdown.Item onClick={this.props.handleInstrumentChange} id='piano'>Piano</Dropdown.Item>
@@ -30,7 +30,7 @@ export default class Controls extends React.Component {
         <Button className="stopButton" color='green' style={{ margin: '35px', boxShadow: '0px 0px 5px black' }}>
           <Icon name='stop' />Stop</Button><br />
         <Form style={{ margin: '10px 0px -23px 0px' }}>
-          <TextArea value={this.props.recordedKeys} placeholder='Key input will go here.' style={{ backgroundColor: 'black', color: 'white', opacity: '80%', width: '55%' }} />
+          <TextArea value={this.props.recordedKeys} placeholder='Key input will go here.' style={{ backgroundColor: 'black', color: 'white', opacity: '70%', width: '55%', border: '1px solid gray' }} />
         </Form>
       </Container>
     );
