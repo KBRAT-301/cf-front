@@ -109,7 +109,7 @@ export default class Keyboard extends React.Component {
 
     return (
       <Grid>
-        <Container className="controls">
+        <Container className="controlsImg">
           <Controls className="" handleSaveButton={this.props.handleSaveButton}/>
           <div className="keyboard">
             {keys}
