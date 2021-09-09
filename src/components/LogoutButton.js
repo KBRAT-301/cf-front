@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react';
 const LogoutButton = () => {
   const { logout } = useAuth0();
   return (
-    <Button className="logButton" size='massive' color='pink' onClick={() => logout ({ returnTo: window.location.origin })}>
+    <Button className="logButton" color='pink' onClick={() => logout ({ returnTo: window.location.origin })}>
       LOG OUT
     </Button>
   );
