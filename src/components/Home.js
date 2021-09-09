@@ -5,9 +5,6 @@ import Keyboard from './Keyboard';
 import axios from 'axios';
 // import Recording from './recording';
 
-
-
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -21,8 +18,12 @@ class Home extends React.Component {
     let newRecordedKeys = [...this.state.recordedKeys];
     newRecordedKeys.push(key);
     this.setState({ recordedKeys: newRecordedKeys });
+    console.log('handleRecordKey', key);
+    console.log('recordedKeys', this.state.recordedKeys);
   }
-  handleSave = async (toBeSaved) => {
+
+  handleSave = async () => {
+    console.log('toBeSaved', this.state.recordedKeys);
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
       const config = {
@@ -30,7 +31,7 @@ class Home extends React.Component {
         method: 'post',
         baseURL: process.env.REACT_APP_API,
         url: '/sound',
-        data: toBeSaved,
+        data: {song: this.state.recordedKeys},
         params: { email: this.props.auth0.user.email },
       };
       try {
@@ -38,6 +39,7 @@ class Home extends React.Component {
         const newSound = response.data;
         const sound = [...this.state.sound, newSound];
         this.setState({ sound });
+        console.log('saved!', sound);
       } catch (error) {
         res.status(404).send(error);
       }
@@ -47,7 +49,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave(this.state.recordedKeys)}>Save Recording</Button>
+        <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave}>Save Recording</Button>
         <Keyboard handleRecordKey={this.handleRecordKey} />
         {/* <Recording/> */}
       </div>
