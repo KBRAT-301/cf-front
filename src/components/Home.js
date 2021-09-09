@@ -39,6 +39,7 @@ class Home extends React.Component {
         const newSound = response.data;
         const sound = [...this.state.sound, newSound];
         this.setState({ sound });
+        this.setState({ recordedKeys: [] });
         console.log('saved!', sound);
       } catch (error) {
         res.status(404).send(error);
