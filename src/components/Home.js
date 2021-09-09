@@ -2,15 +2,13 @@ import React from 'react';
 // import { Button } from 'semantic-ui-react';
 import { withAuth0 } from '@auth0/auth0-react';
 import Keyboard from './Keyboard';
-import axios from 'axios';
-// import Recording from './recording';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       recordedKeys: [],
-      sound: []
+      sound: [],
     };
   }
 
@@ -20,6 +18,12 @@ class Home extends React.Component {
     this.setState({ recordedKeys: newRecordedKeys });
     console.log('handleRecordKey', key);
     console.log('recordedKeys', this.state.recordedKeys);
+  };
+
+  handleRecordSound = (sound) => {
+    let newRecordedSound = [...this.state.sound];
+    newRecordedSound.push(sound);
+    this.setState({ sound: newRecordedSound});
   }
 
   handleSave = async () => {

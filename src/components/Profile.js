@@ -1,13 +1,20 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import { useEffect } from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 
 
-const Profile = () => {
+const Profile = (props) => {
+  useEffect(() => {
+    const soundData = props.getSound();
+    console.log(soundData);
+  });
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
     return <div>LOADING</div>;
   }
+
+  console.log(props.getSound);
   return (
     isAuthenticated && (
       <div className="profile">

@@ -8,11 +8,10 @@ import {
   NOTES,
   VALID_KEYS,
   KEY_TO_NOTE,
-  // NOTE_TO_KEY,
 } from '../keyMap';
 
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-const now = Tone.now();
+// const now = Tone.now();
 
 export default class Keyboard extends React.Component {
   constructor(props) {
@@ -26,16 +25,18 @@ export default class Keyboard extends React.Component {
   }
 
   handleKeyDown = (e) => {
+    console.log('FIND ME', e);
     if (!e.repeat) {
       let key = e.key;
       let newPressedKeys = [...this.state.pressedKeys];
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
         this.setState({ pressedKeys: newPressedKeys });
+        let keyNote = synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         // synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         this.playNote(KEY_TO_NOTE[key]);
         if(this.state.isRecording) {
-          this.props.handleRecordKey(key);
+          this.props.handleRecordKey(keyNote);
         }
         console.log('isRecording',this.state.isRecording);
         console.log('toberecorded',this.props.recordedKeys);
@@ -57,7 +58,8 @@ export default class Keyboard extends React.Component {
   handleKeyClick = (e) => {
     let key = e.target.innerText.toLowerCase();
     if (VALID_KEYS.includes(key)) {
-      this.playNote(KEY_TO_NOTE[key]);
+      console.log('is this valid?');
+      // this.playNote(KEY_TO_NOTE[key]);
     }
   };
 
@@ -90,7 +92,9 @@ export default class Keyboard extends React.Component {
     if (this.state.mouseIsDown) {
       let key = e.target.innerText.toLowerCase();
       if (VALID_KEYS.includes(key)) {
-        this.playNote(KEY_TO_NOTE[key]);
+        // this.playNote(KEY_TO_NOTE[key]);
+        let keyNote = synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
+        this.props.handleRecordSound(keyNote);
       };
     }
   };
