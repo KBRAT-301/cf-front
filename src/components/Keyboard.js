@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Tone from 'tone';
-
 import './Keyboard.css';
 import Key from './Key';
 import {
@@ -18,32 +17,66 @@ export default class Keyboard extends React.Component {
     super(props);
     this.state = {
       pressedKeys: [],
+      recordedKeys: [],
       mouseIsDown: false,
     };
   }
   handleKeyDown = (e) => {
     if (!e.repeat) {
+      // console.log(this.state.recordedKeys, this.state.pressedKeys);
       let key = e.key;
       let newPressedKeys = [...this.state.pressedKeys];
+      let newRecordedKeys = [...this.state.recordedKeys];
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
+        newRecordedKeys.push(key);
         this.setState({ pressedKeys: newPressedKeys });
+        // this.setState({ recordedKeys: newRecordedKeys });
+        this.props.handleRecordKey(key);
         synth.triggerAttack(KEY_TO_NOTE[key], now);
         // this.playNote(KEY_TO_NOTE[key]);
       }
     }
   };
 
+
+  
+  // handleSavedNotes = () => {
+  //   this.props.auth0.getIdTokenClaims().then(async res => {
+  //     const jwt = res.__raw;
+
+  //     const config = {
+  //       headers: { Authorization: `Bearer ${jwt}` },
+  //       baseURL: server_PORT,
+  //       url: '/sound',
+  //       params: { email: this.props.auth0.user.email },
+  //       method: 'post'
+  //     };
+
+  //     const response = await axios(config);
+
+  //     this.setState({ books: response.data });
+  //   })
+  //     .catch(err => console.error(err));
+  // }
+
+
+  
   handleKeyUp = (e) => {
+    console.log(this.state.recordedKeys);
     let key = e.key;
     let index = this.state.pressedKeys.indexOf(e.key);
     let newPressedKeys = [...this.state.pressedKeys];
+    // let newRecordedKeys = [...this.state.recordedKeys];
     if (newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
       newPressedKeys.splice(index, 1);
       this.setState({ pressedKeys: newPressedKeys });
+      // this.setState({ recordedKeys: newRecordedKeys });
       synth.triggerRelease(KEY_TO_NOTE[key], now);
     }
   };
+
+
 
   handleKeyClick = (e) => {
     let key = e.target.innerText.toLowerCase();
@@ -90,20 +123,20 @@ export default class Keyboard extends React.Component {
       );
     });
 
-    const audioFiles = NOTES.map((note, index) => {
-      return (
-        <audio
-          id={note}
-          key={index}
-          src={`../../celloAudio/${note}.mp3`}
-        />
-      );
-    });
+    // const audioFiles = NOTES.map((note, index) => {
+    //   return (
+    //     <audio
+    //       id={note}
+    //       key={index}
+    //       src={`../../celloAudio/${note}.mp3`}
+    //     />
+    //   );
+    // });
 
     return (
       <div className="keyboard">
         {keys}
-        {audioFiles}
+        {/* {audioFiles} */}
       </div>
     );
   };
