@@ -57,7 +57,7 @@ export default class Keyboard extends React.Component {
   };
 
   playNote = (note) => {
-    if(this.state.isPiano) {
+    if (this.state.isPiano) {
       console.log('isPiano!');
       const noteAudio = new Audio(document.getElementById(note).src);
       noteAudio.play();
@@ -116,7 +116,7 @@ export default class Keyboard extends React.Component {
       <Grid>
         <Container className="controlsImg">
           <Controls className="" handleSaveButton={this.props.handleSaveButton}
-                      handleInstrumentChange={this.handleInstrumentChange}/>
+            handleInstrumentChange={this.handleInstrumentChange} />
           <div className="keyboard">
             {keys}
             {audioFiles}
