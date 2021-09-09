@@ -70,6 +70,7 @@ h1, h2, .navItem, p {
   /* justify-content: space-around; */
   padding: 50px 100px;
   /* background-color: red; */
+  margin-top: 140px;
 }
 
 .bio {
@@ -85,7 +86,7 @@ h1, h2, .navItem, p {
   opacity: 90%;
   /* justify-content: flex-start; */
   align-items: center;
-  /* height: 70%; */
+  height: 100%;
 }
 
 .bioImg {
@@ -144,4 +145,5 @@ footer p {
   margin: auto;
   text-align: center;
   font-size: 1.1em;
+
 }
