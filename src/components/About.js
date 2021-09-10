@@ -1,6 +1,12 @@
 import React from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
 import { Grid, Container, Image, Button } from 'semantic-ui-react';
+import kyle from '../img/kyle.png';
+import brandon from '../img/brandon.jpg';
+import ryan from '../img/ryan.jpg';
+import alex from '../img/alex.jpg';
+import tray from '../img/tray.jpg';
+
 
 class About extends React.Component {
 
@@ -12,7 +18,7 @@ class About extends React.Component {
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/kyle-cohen-b49493213//" target="_blank" rel="noreferrer">
-                  <Image src="https://media-exp1.licdn.com/dms/image/C4E03AQFICXoAfN1QMQ/profile-displayphoto-shrink_800_800/0/1626655654589?e=1636588800&v=beta&t=d7Og1lBL-EM-S_aQXGPYQ4tGLO8swA3I8BWErw0oT74" alt='Kyle Cohen' />
+                  <Image src={kyle} alt='Kyle Cohen' />
                   <h3>Kyle Cohen</h3></a>
               </Container>
               <p>
@@ -29,7 +35,7 @@ class About extends React.Component {
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/brandon-rimes/" target="_blank" rel="noreferrer">
-                  <img src="https://avatars.githubusercontent.com/u/77939170?v=4" alt="Brandon Rimes" />
+                  <Image src={brandon} alt="Brandon Rimes" />
                   <h3>Brandon Rimes</h3></a>
               </Container>
               <p>
@@ -48,7 +54,7 @@ class About extends React.Component {
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/ryanemmans/" target="_blank" rel="noreferrer">
-                  <img src="https://avatars.githubusercontent.com/u/86586274?v=4" alt="Ryan Emmans" />
+                  <Image src={ryan} alt="Ryan Emmans" />
                   <h3>Ryan Emmans</h3></a>
               </Container>
               <p>
@@ -65,7 +71,7 @@ class About extends React.Component {
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/alex-grazda/" target="_blank" rel="noreferrer">
-                  <img src="https://media-exp1.licdn.com/dms/image/C5603AQGAX40WixVeRQ/profile-displayphoto-shrink_800_800/0/1631133958636?e=1636588800&v=beta&t=arRt3kVTt1zFxuB4vyi2UO1I9AatXRnD2vszkifd5_Q" alt="Alex Grazda" />
+                  <Image src={alex} alt="Alex Grazda" />
                   <h3>Alex Grazda</h3></a>
               </Container>
               <p>
@@ -82,7 +88,7 @@ class About extends React.Component {
             <Grid.Column className="bio">
               <Container className="bioImg">
                 <a href="https://www.linkedin.com/in/chattray-chea/" target="_blank" rel="noreferrer">
-                  <img src="https://avatars.githubusercontent.com/u/84699682?v=4" alt="Tray Chea" />
+                  <Image src={tray} alt="Tray Chea" />
                   <h3>Tray Chea</h3></a>
               </Container>
               <p>
