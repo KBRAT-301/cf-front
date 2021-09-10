@@ -32,11 +32,11 @@ export default class Keyboard extends React.Component {
       if (!newPressedKeys.includes(key) && VALID_KEYS.includes(key)) {
         newPressedKeys.push(key);
         this.setState({ pressedKeys: newPressedKeys });
-        let keyNote = synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
+        // let keyNote = synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         // synth.triggerAttackRelease(KEY_TO_NOTE[key], '8n');
         this.playNote(KEY_TO_NOTE[key]);
         if(this.state.isRecording) {
-          this.props.handleRecordKey(keyNote);
+          this.props.handleRecordKey(key);
         }
         console.log('isRecording',this.state.isRecording);
         console.log('toberecorded',this.props.recordedKeys);
@@ -60,6 +60,9 @@ export default class Keyboard extends React.Component {
     if (VALID_KEYS.includes(key)) {
       console.log('is this valid?');
       // this.playNote(KEY_TO_NOTE[key]);
+      if(this.state.isRecording) {
+        this.props.handleRecordKey(key);
+      }
     }
   };
 
