@@ -21,11 +21,11 @@ class Home extends React.Component {
     console.log('recordedKeys', this.state.recordedKeys);
   };
 
-  handleRecordSound = (sound) => {
-    let newRecordedSound = [...this.state.sound];
-    newRecordedSound.push(sound);
-    this.setState({ sound: newRecordedSound});
-  }
+  // handleRecordSound = (sound) => {
+  //   let newRecordedSound = [...this.state.sound];
+  //   newRecordedSound.push(sound);
+  //   this.setState({ sound: newRecordedSound});
+  // }
 
   handleSave = async () => {
     console.log('toBeSaved', this.state.recordedKeys);
@@ -60,11 +60,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        {/* <Button className="saveButton" color='pink' size='huge' style={{ width: '200px', marginBottom: '30px' }} onClick={this.handleSave}>Save Recording</Button> */}
         <Keyboard handleRecordKey={this.handleRecordKey}
           handleSaveButton={this.handleSave}
           recordedKeys={this.state.recordedKeys}/>
-        {/* <Recording/> */}
       </div>
     );
   }
