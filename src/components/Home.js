@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-// import { Button } from 'semantic-ui-react';
 import { withAuth0 } from '@auth0/auth0-react';
 import Keyboard from './Keyboard';
 
@@ -44,7 +43,6 @@ class Home extends React.Component {
         const newSound = response.data;
         const sound = [...this.state.sound, newSound];
         this.setState({ sound });
-        // this.setState({ recordedKeys: [] });
         this.clearRecording();
         console.log('saved!');
       } catch (error) {
@@ -61,7 +59,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <Keyboard handleRecordKey={this.handleRecordKey}
-          handleSaveButton={this.handleSave}
+          handleClearButton={this.clearRecording}
           recordedKeys={this.state.recordedKeys}/>
       </div>
     );

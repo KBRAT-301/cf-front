@@ -10,6 +10,10 @@ export default class Controls extends React.Component {
   }
 
   render() {
+    let recordIdName = '';
+    if(this.props.isRecording) {
+      recordIdName = 'recording';
+    }
     return (
       <Container textAlign='center'>
         <Menu style={{ margin: '-50px 0px 18px 52px', width: '155px', opacity: '90%', boxShadow: '0px 0px 5px black' }}>
@@ -22,31 +26,32 @@ export default class Controls extends React.Component {
           </Dropdown>
         </Menu>
 
-        <Button animated='fade' circular color='red' size='huge' alt='Record' style={{ margin: '35px', boxShadow: '0px 0px 10px black' }} onClick={this.props.handleRecordButton}>
+        <Button id={recordIdName} animated='fade' circular color='red' size='huge' style={{ margin: '35px', boxShadow: '0px 0px 10px black' }} onClick={this.props.handleRecordButton}>
           <Button.Content hidden>Record</Button.Content>
           <Button.Content visible>
             <Icon name='circle' />
           </Button.Content>
         </Button>
 
-        <Button animated='fade' circular color='green' size='huge' style={{ margin: '35px ', boxShadow: '0px 0px 10px black' }}>
+        <Button animated='fade' circular color='green' size='huge' style={{ margin: '35px ', boxShadow: '0px 0px 10px black' }} onClick={this.props.handlePlayBackButton}>
           <Button.Content hidden>Play</Button.Content>
           <Button.Content visible>
             <Icon name='play' />
           </Button.Content>
         </Button>
 
-        <Button animated='fade' circular color='blue' size='huge' style={{ margin: '35px', boxShadow: '0px 0px 10px black' }}>
+        <Button animated='fade' circular color='blue' size='huge' style={{ margin: '35px', boxShadow: '0px 0px 10px black' }}
+          onClick={this.props.handleStopPlayBack}>
           <Button.Content hidden>Stop</Button.Content>
           <Button.Content visible>
             <Icon name='stop' />
           </Button.Content>
         </Button>
 
-        <Button animated='fade' circular color='yellow' size='huge' style={{ margin: '35px ', boxShadow: '0px 0px 10px black' }} onClick={this.props.handleSaveButton}>
-          <Button.Content hidden>Save</Button.Content>
+        <Button animated='fade' circular color='yellow' size='huge' style={{ margin: '35px ', boxShadow: '0px 0px 10px black' }} onClick={this.props.handleClearButton}>
+          <Button.Content hidden>Clear</Button.Content>
           <Button.Content visible>
-            <Icon name='save' />
+            <Icon name='trash alternate' />
           </Button.Content>
         </Button><br />
 

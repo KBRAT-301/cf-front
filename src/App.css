@@ -137,6 +137,23 @@ footer p {
   font-size: 1.1em;
 }
 
+#recording {
+  animation: recording 1s linear infinite alternate;
+}
+
+@keyframes recording {
+  0% {
+    color: white;
+    box-shadow: inset 0 0 0px white;
+
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: inset 0 0 5px white;
+    color: red;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     height: 192px;
