@@ -19,6 +19,7 @@
   color: ivory;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
   padding-top: 135px;
 }
 
@@ -39,8 +40,8 @@
 .key-text {
   position: relative;
   color: black;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 1.7rem;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
   margin-top: 212px;
