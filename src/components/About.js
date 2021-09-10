@@ -92,7 +92,7 @@ class About extends React.Component {
                   <h3>Tray Chea</h3></a>
               </Container>
               <p>
-                Tray is a Seattle based software developer. He is a former Air Force service member, serving for 10 years.Within the service he honed his skills in Aerospace Maintenance and Operations/Logistics management. He relishes AI, Ancient Languages, and Animal/Plant Conservation.
+                Tray is a Seattle based software developer. He is a former Air Force service member, serving for 10 years. Within the service he honed his skills in Aerospace Maintenance and Operations/Logistics management. He relishes AI, Ancient Languages, and Animal/Plant Conservation.
               </p>
               <Container textAlign='center'>
                 <a href="https://www.linkedin.com/in/chattray-chea/" target="_blank" rel="noreferrer">

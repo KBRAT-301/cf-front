@@ -50,7 +50,7 @@ export default class Controls extends React.Component {
           </Button.Content>
         </Button><br />
 
-        <Form style={{ marginBottom: '-29px' }}>
+        <Form style={{ margin: '-6px 0px -23px 0px' }}>
           <TextArea value={this.props.recordedKeys} placeholder='Press record once to begin recording. Press again to stop recording.' style={{ fontSize: '1.3rem', fontFamily: 'Ubuntu, sans-serif', backgroundColor: 'black', color: 'white', opacity: '70%', width: '55%', border: '1px solid gray' }} />
         </Form>
       </Container>
